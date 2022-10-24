@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HTML Form Validation</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="JS-control" class="CSS-control">
+            <h2>Sign Up here</h2>
+
+            <div class="form-control">
+                <label for="username">Username :</label>
+                <input type="text" id="username" placeholder="Enter username">
+                <small>Error Message</small>
+            </div>
+<!--Small element is used to show the error made by user while enter the data. We'll later modify small element more and make it better-->
+            <div class="form-control">
+                <label for="email">Email :</label>
+                <input type="text" id="email" placeholder="Enter email">
+                <small>Error Message</small>
+            </div>
+<!--Placeholder attribute is used to put pre written text when you open form inside the box like in username or password-->
+            <div class="form-control">
+                <label for="password1">Password :</label>
+                <input type="password" id="password1" placeholder="Enter password">
+                <small>Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="password2">Confirm Password :</label>
+                <input type="password" id="password2" placeholder="Enter password again">
+                <small>Error Message</small>
+            </div>
+            
+            <button>Submit</button> <!--we can use direct button element to show the submit button -->
+            <br>
+            <a href="../index.html">Home</a>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
