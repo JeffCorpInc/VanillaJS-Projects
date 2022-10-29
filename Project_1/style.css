@@ -73,6 +73,8 @@ h2
 }
 .form-control small
 {
+    font-size: 11px;
+    font-family: sans-serif ;
     position: absolute;
     color: orangered;
     left: 5px;
