@@ -1,5 +1,5 @@
-const form = document.getElementById("JS-control");         //we have stored all input tags into constant variable 
-const username = document.getElementById("username");
+const form = document.getElementById("JS-control");         //we have stored all "input tags" into constant variable 
+const username = document.getElementById("username");       //const , let and var are storing varibales
 const email = document.getElementById("email");
 const password1 = document.getElementById("password1");
 const password2 = document.getElementById("password2");
@@ -8,15 +8,15 @@ const password2 = document.getElementById("password2");
 
 //error function
 function showError(input,message){                          //we just created a func. here we'll link it to the event listner to execute it according       
-        const AFormControl = input.parentElement;           //.parentElement will trigger us to the parent element of the input tag
+        const AFormControl = input.parentElement;           //.parentElement will trigger us to the parent element of the "input tag"
         AFormControl.className = "form-control error";
-        const small = AFormControl.querySelector("small")
-        small.innerText = message                            //innerText and innerHTML are same
+        const small = AFormControl.querySelector("small");
+        small.innerText = message;                            //innerText and innerHTML are same
 }
 
 //success function
 function showSuccess(input) {
-        const AFormControl = input.parentElement;           //.parentElement will trigger us to the parent element of the input tag
+        const AFormControl = input.parentElement;           //.parentElement will trigger us to the parent element of the "input tag"
         AFormControl.className = "form-control sucess";
 }
 
