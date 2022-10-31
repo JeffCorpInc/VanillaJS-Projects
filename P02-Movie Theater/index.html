@@ -7,16 +7,104 @@
     <title>Movie Theater</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+    <body>
+<!--Movies-->
+        <div class="movie-box">
+            <label>Please Select your Movies :</label>
+            <select id="Movie">
+                <option value="15">Top Gun: Maveric (14.99$)</option>
+                <option value="13">Captain America (12.99$)</option>
+                <option value="18">The Legend of Maula Jutt (17.99$)</option>
+                <option value="12">Spider Man: Homecoming (12.50$)</option>
+                <option value="16">Docter Strange (16.50$)</option>
+            </select>
+        </div> 
+<!--Options-->
+        <ul class="legend">
+            <li>
+                <div class="seat "></div>
+                    <small>Available</small>
+            </li>
+            <li>
+                <div class="seat selected"></div>
+                <small>Selected</small>
+            </li>
+            <li>
+                <div class="seat occupied"></div>
+                <small>Occupied</small>
+            </li>
+        </ul>
+<!--Screen And Seat Selection-->
+        <div class="container">
 
-
-
-
-
-
-
-
+            <div class="screen"></div>
+            
+            <div class="seatRows">
+                <div class="seat occupied">1</div>
+                <div class="seat">2</div>
+                <div class="seat occupied">3</div>
+                <div class="seat">4</div>
+                <div class="seat">5</div>
+                <div class="seat">6</div>
+                <div class="seat occupied">7</div>
+                <div class="seat">8</div>
+            </div>
+            <div class="seatRows">
+                <div class="seat">9</div>
+                <div class="seat">10</div>
+                <div class="seat">11</div>
+                <div class="seat">12</div>
+                <div class="seat occupied">13</div>
+                <div class="seat">14</div>
+                <div class="seat">15</div>
+                <div class="seat occupied">16</div>
+            </div>
+            <div class="seatRows">
+                <div class="seat">17</div>
+                <div class="seat">18</div>
+                <div class="seat occupied">19</div>
+                <div class="seat">20</div>
+                <div class="seat">21</div>
+                <div class="seat">22</div>
+                <div class="seat occupied">23</div>
+                <div class="seat">24</div>
+            </div>
+            <div class="seatRows">
+                <div class="seat">25</div>
+                <div class="seat">26</div>
+                <div class="seat">27</div>
+                <div class="seat occupied">28</div>
+                <div class="seat occupied">29</div>
+                <div class="seat">30</div>
+                <div class="seat">31</div>
+                <div class="seat">32</div>
+            </div>
+            <div class="seatRows">
+                <div class="seat">33</div>
+                <div class="seat occupied">34</div>
+                <div class="seat">35</div>
+                <div class="seat">36</div>
+                <div class="seat">37</div>
+                <div class="seat">38</div>
+                <div class="seat occupied">39</div>
+                <div class="seat occupied">40</div>
+            </div>
+            <div class="seatRows">
+                <div class="seat">41</div>
+                <div class="seat">42</div>
+                <div class="seat">43</div>
+                <div class="seat occupied">44</div>
+                <div class="seat occupied">45</div>
+                <div class="seat">46</div>
+                <div class="seat">47</div>
+                <div class="seat">48</div>
+            </div>
+        </div>
+<!--Text-->
+        <p id="text">
+            You have selected <span class="count">0</span> seats for total of <span class="total">0</span>$.
+        </p>
     
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
