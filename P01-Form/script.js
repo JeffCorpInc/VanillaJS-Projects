@@ -38,7 +38,7 @@ function PasswordMatch(input1, input2){
 }
 //Fields Checking
 function fieldCheck(Array){
-        Array.forEach(function(input){                           //forEach is a high order array method
+        Array.forEach(function(input){                           //forEach is a high order array method loop... used with array
 
             if (input.value === ""){                            //agr input wala dabba khali ho to show error
                 showError(input ,`${getfieldID(input)} is required`);     //it is called template literals .We can use concatenation method as well    
