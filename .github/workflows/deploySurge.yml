@@ -2,24 +2,22 @@ name: deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     
-     # Runs a single command using the runners shell
     - name: Install NodeJS
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
+    
     - name: Install Surge
-      run: npm install -g surge
+      run: npm install --global surge
+    
     - name: Run Surge
-      run: surge ./ mehdi-js-projects.surge.sh --token ${{secrets.SURGE_TOKEN}}   
-     
-          
+      run: surge ./ venomaz.surge.sh --token ${{secrets.MHDSECRET}} 
