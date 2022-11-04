@@ -1,25 +1,23 @@
-name: Deploy to Surge
+name: deploy 
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - name: installing node
-      - uses: actions/setup-node@v2-beta
-        with:
-           node-version: '12'
-
-      - name: installing surge
-      - run: npm install --global surge
-
-      - name: delploy Web Application
-      - run:  surge ./ medhi_js.surge.sh --token ${{ secrets.PSEUDOSECRET }}
+    - uses: actions/checkout@v2
+    
+    - name: Install NodeJS
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: 12
+    
+    - name: Install Surge
+      run: npm install --global surge
+    
+    - name: Run Surge
+      run: surge ./ venomaz.surge.sh --token ${{secrets.MHDSECRET}} 
