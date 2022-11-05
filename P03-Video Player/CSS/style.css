@@ -23,6 +23,7 @@ body{
     background-color: black !important;
     width: 60%;
     cursor: pointer;
+    box-shadow: 0px 0px 45px;
 }
 
 .control1
@@ -31,7 +32,11 @@ body{
     width: 55%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
+}
+span{
+    
+    font-weight: bold;
 }
 
 .progress-bar{
@@ -49,6 +54,7 @@ body{
 .btn:focus{
     outline: 0;
 }
+
 @media(max-width: 800px){                                                          /*its a function used to adjust the screen according to our given functionalities*/
     .screen,.control1,.control2,.progress-bar{                                     /*making website responsive */
         width: 50%;
