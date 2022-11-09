@@ -79,6 +79,11 @@ select:focus, input:focus, button:focus{
     color: rgb(91, 91, 91);
     rotate: 90deg;
 }
+.btn:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
 
 .rate{
     display: flex;
@@ -102,7 +107,7 @@ select:focus, input:focus, button:focus{
     justify-content: center;
     display: flex;
     position: relative;
-    top: 22px;
+    top: 85.2px;
     font-size: 13px;
     letter-spacing: 1px;
 }
