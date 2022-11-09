@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 *{
     box-sizing: border-box;
@@ -61,5 +62,17 @@ span{
     }
 }
 
+
+
+.makeby p{
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 14px;
+}
 
 

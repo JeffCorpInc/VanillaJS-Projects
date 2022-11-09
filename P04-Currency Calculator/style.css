@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root{
+    --primary--color: rgb(255, 168, 28);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background:radial-gradient(white,rgba(47, 47, 47, 0.65));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding:20px;
+    margin: 0;
+}
+
+h1{
+    margin-top: 45px;
+    margin-bottom: 0;
+}
+
+.image{
+    width: 250px;
+    box-shadow: 1px 1px 40px rgb(99, 99, 99);
+    border-radius: 45px;
+    padding: 60px;
+}
+
+select:focus, input:focus, button:focus{
+    outline: 0;
+}
+
+.currencies{
+    padding:25px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-radius: 20px;
+}
+
+.currencies select{
+    padding: 9px;
+    margin-right: 20px;
+    border: 2px solid var(--primary--color);
+    border-radius: 20px;
+    width: 247px;
+    box-shadow: 1px 3px 20px rgb(120, 120, 120);
+    
+}
+
+.currencies input{
+    background-color: rgb(253, 185, 83);
+    padding: 9px;
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 250px;
+    box-shadow: 1px 3px 20px rgb(120, 120, 120);
+}
+
+.flip-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.btn{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: rgb(91, 91, 91);
+    rotate: 90deg;
+}
+
+.rate{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 10px;
+    font-size: 17px;
+    color: rgb(91, 91, 91);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+.makeby p{
+    font-family: 'Lato', sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    top: 22px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
