@@ -120,7 +120,7 @@ a
 
 
 
-.makeby p{
+/* .makeby p{
     font-family: 'Lato', sans-serif;
     font-size: 13px;
     letter-spacing: 1px;
@@ -129,4 +129,17 @@ a
     justify-content: center;
     position: relative;
     top: 125px;
-}
+} */
+
+.makeby p{
+
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    
+    padding-top: 100%;
+    }
