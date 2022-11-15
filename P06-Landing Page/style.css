@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+nav{
+    background-color: black;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 220px;
+    z-index: 100;
+    transform: translateX(-100%);
+}
+
+nav .image{
+    text-align: center;
+    padding: 40px;
+}
+
+nav img{
+    border-radius: 100%;
+    height: 110px;
+    size: 30%;
+    width: 100px;
+}
+nav ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li{
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+nav ul li:first-of-type {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+header{
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px;
+    font-size: 18px;
+}
+
+header h1{
+    margin: 0;
+}
+header p{
+    margin: 20px 0;
+}
+
+button , input[type="submit"]{
+    background-color: black;
+    color: whitesmoke;
+    border: 0;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+}
+
+.toggle{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.apply{
+    padding: 12px;
+    font-size: 13px;
+}
+
+.content{
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+    align-items: center;
+
+}
+
+.content h2{
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.content p{
+    margin-bottom: 20px;
+}
+
+
+.modal-container{
+    background-color: rgba(0,0,0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+}
+
+.modal{
+    background-color: whitesmoke;
+    color: black;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    width: 400px;
+}
+
+.modal-header{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 12px;
+}
+
+.modal-header h3{
+    margin: 0px;
+    padding: 13px;
+}
+
+.modal-content{
+    padding: 25px;
+    margin: 0;
+} 
+.modal-content div{
+    margin: 15px 10px;
+    padding: 4px;
+    
+}
+.modal-content label{
+    display: block;
+    margin-bottom: 7px;
+}
+.modal-content input{
+    width: 100%;
+    padding: 9px;
+    border: 1px solid black;
+    font-size: 13px;
+}
+
+.close-btn{
+    position: absolute;
+    background-color: transparent;
+    top: 12.5px;
+    right: 20px;
+    font-size: 25px;
+}
+
+.modal-container .submit-btn{
+    margin-top: 25px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.bottom{
+    text-align:center;
+    padding: 1px;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    padding-right: 5px;
+}
+.bottom a{
+    text-decoration: none;
+    color: black;
+}
+
+.bottom a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

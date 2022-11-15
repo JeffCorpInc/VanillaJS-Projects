@@ -6,13 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDNEpUTHQoQUJMHLrErGJyHg89uy71MyuHFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+    <nav>
+        <div class="image">
+            <img src="../P06-Landing Page/images/MMJ01633.jpg" alt="Profile" height="200">
+        </div>
+        <ul>
+            <li><a href="#s"></a>Home</li>
+            <li><a href="#d"></a>About</li>
+            <li><a href="#q"></a>Contact Us</li>
+            <li><a href="#a"></a>Team</li>
+        </ul>
+    </nav>
+
+    <header>
+        <button class="toggle" id="toggle">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+        </button>
+        <h1>medhi_jaff</h1>
+        <p>Jack of All Trades</p>
+        <button class="apply" id="open">Apply Now</button>
+    </header>
+
+    <div class="content">
+        <h2>Hello</h2>
+        <p>I am Mehdi. Multiple years of experience in Multiple innovative fields. I have gained photography and videography knowledge since 2017, working and exploring different models and techniques to improve productivity in my work. I have a passion for Filmmaking and color grading.</p>
     
+        <h2>My Skills</h2>
+        <p><b>Photography:</b> working as a Professional photographer with a company as well as individual. </p>
+        <p><b>Videography:</b> have little knowledge and ideas related to Flmmaking. I have launched some of my best productions on Television. </p>
+        <p><b>Adobe Lightroom:</b> working and mastering since 2017. I have launched more than thousands preset online.</p>
+        <p><b>Adobe Premier Pro:</b> hands-on experience of 4 years in color grading, masking, and typography.</p>
+        <p><b>Programming:</b> understanding and learning core concepts and proficient skills.  </p>
+    </div>
 
+    <div class="modal-container"id="modal">
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa-sharp fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <h3>Apply</h3>
+            </div>
+            <div class="modal-content">
+                <p>To sign for classes please submit this form</p>
+                <form class="modal-form">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Enter name">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter email">
+                    </div>
+                    <div>
+                        <label for="pass1">Password</label>
+                        <input type="password" id="pass1" class="form-input" placeholder="Enter password">
+                    </div>
+                    <div>
+                        <label for="pass2">Confirm Password</label>
+                        <input type="password" id="pass2" class="form-input" placeholder="Enter password again">
+                    </div>
+                    <input type="submit" class="submit-btn" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <div class="bottom">
+        <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
 
+    <script src="https://kit.fontawesome.com/28a0a7779f.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
