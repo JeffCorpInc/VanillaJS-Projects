@@ -9,6 +9,11 @@ body{
     margin: 0;
 }
 
+body.show-nav{
+    transform: translateX(200px);
+    transition: 0.5s ease;
+}
+
 nav{
     background-color: black;
     color: white;
@@ -16,7 +21,7 @@ nav{
     left: 0;
     top: 0;
     height: 100vh;
-    width: 220px;
+    width: 200px;
     z-index: 100;
     transform: translateX(-100%);
 }
@@ -102,11 +107,11 @@ button:focus{
 }
 
 .content h2{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 40px;
 }
 .content p{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 
@@ -120,6 +125,10 @@ button:focus{
     display: none;
 }
 
+.modal-container.show-modal{
+     display: block;
+}
+
 .modal{
     background-color: whitesmoke;
     color: black;
@@ -130,6 +139,17 @@ button:focus{
     transform: translate(-50%,-50%);
     max-width: 100%;
     width: 400px;
+    animation-name: animateModal;
+    animation-duration: 1s;
+}
+
+@keyframes animateModal{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .modal-header{

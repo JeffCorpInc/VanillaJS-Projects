@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hangman Game</h1>
+    <p>Can you guess the hidden word? Please enter a letter.</p>
+
+    <div class="game-cont">
+
+        <svg height="250px" width="200px" class="drawing">
+            <!--Figure-->
+            <line x1="60" y1="20" x2="140" y2="20" />    
+            <line x1="60" y1="20" x2="140" y2="20" />    
+            <line x1="140" y1="20" x2="140" y2="50" />    
+            <line x1="60" y1="20" x2="60" y2="250" />
+            <line x1="20" y1="250" x2="100" y2="250" />
+            <!--Head-->
+            <circle cx="140" cy="70" r="20"  class="skeliton"/>
+            <!--body-->
+            <line x1="140" y1="90" x2="140" y2="170" class="skeliton"/>
+            <!--Arms-->
+            <line x1="140" y1="120" x2="120" y2="100" class="skeliton"/>
+            <line x1="140" y1="120" x2="160" y2="100" class="skeliton"/>
+            <!--Legs-->
+            <line x1="140" y1="170" x2="160" y2="200" class="skeliton"/>
+            <line x1="140" y1="170" x2="120" y2="200" class="skeliton"  />
+        </svg>
+
+        <div id="wrong-letter" class="wrong-letter">
+            <p>Wrong Gusses</p>
+            <span> <!-- By JS--> </span>
+        </div>
+
+        <div class="word" id="word"> <!-- By JS--> </div>
+    </div>
+
+    <!--Popup : win or lose -->
+    <div class="popup-cont">
+        <div class="popup-content">
+            <h2 id="win-lose"> <!-- By JS--> </h2>
+            <button class="reset">
+                Restart Game
+            </button>
+        </div>
+    </div>
+
+    <!--Sliding Popup : same word-->
+    <div class="sliding-cont" id="sliding-cont">
+        <p>You have already entered this letter.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aquamarine;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    height: 80vh;
+}
+
+h1{
+    margin: 20px 0 0;
+}
+
+.game-cont{
+    padding: 20px 30px;
+    margin: 0;
+    position: relative;
+    width: 490px;
+    height: 350px;
+}
+
+.wrong-letter{
+    position: absolute;
+    top: 15px;
+    right: 0;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+}
+.wrong-letter p{
+    margin: 15px 0 0 0;
+}
+.wrong-letter span{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.word{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+}
+
+.letter{
+    border-bottom: 3px solid black;
+    display: inline-flex;
+    margin: 0 4px;
+    width: 20px;
+    height: 27px;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-cont{
+    stroke: black;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+.skeliton{
+    display: none;
+}
+
+.popup-cont{
+    background-color: rgba(0, 0,0, 0.8);
+    color: black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.popup-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(127, 255, 212, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 150px;
+}
+.reset{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.sliding-cont{
+    background-color: rgba(0, 0,0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
+    bottom: -50px;
+    transition: transform 0.5s ease-in-out;
+
+}
+.sliding-cont p{
+    margin: 0;
+}
+
+.sliding-cont.show{
+    transform: translateY(-50px);
+}
