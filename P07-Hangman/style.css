@@ -38,7 +38,7 @@ h1{
 }
 .wrong-letter span{
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .word{
@@ -70,6 +70,7 @@ h1{
 }
 
 .popup-cont{
+
     background-color: rgba(0, 0,0, 0.8);
     color: black;
     position: fixed;
@@ -77,7 +78,6 @@ h1{
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     display: none;
