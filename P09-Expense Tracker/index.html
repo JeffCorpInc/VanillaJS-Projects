@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <div class="container">
+
+        <!--Balance-->
+        <h4>Balance</h4>
+        <h2 id="balance">0.00$</h2>
+
+        <!--income expense summary-->
+        <div class="income-expense-tracker">
+            <div>
+                <h4 class="inc">Income</h4>
+                <p class="money plus" id="money-plus">+0.00$</p>
+            </div>
+            <div>
+                <h4 class="exp">Expense</h4>
+                <p class="money minus" id="money-minus">-0.00$</p>
+            </div>
+        </div>
+        
+        <!--Trasaction History-->
+        <h3>Transaction History</h3>
+        <ul class="list" id="list">
+            <li class="plus">
+                Salary
+                <span>+100,000</span>
+                <button class="delete-btn">X</button>
+            </li>
+            <li class="minus">
+                Bills
+                <span>-60,000</span>
+                <button class="delete-btn">X</button>
+            </li>
+        </ul>
+
+        <!--Form to Add New Trasaction -->
+        <h3>Add New Transaction</h3>
+
+        <form class="form">
+            
+            <div class="form-control">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="Add Description">
+            </div>
+            
+            <div class="form-control">
+                <label for="amount">
+                    Trasaction Amount <br/>
+                </label>
+                <br>
+                <input type="number" id="amount" placeholder="Add Amount">
+                <p class="ptxt"><i>NOTE: (For income, Enter +ve Value and for expense, Enter -ve Value)</i></p> 
+            </div>
+            
+            <button class="add">Add Trasaction</button>
+        
+        </form>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
