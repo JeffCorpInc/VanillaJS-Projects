@@ -43,6 +43,12 @@ function updateBEI(){
     money_minus.innerText = `${expense}`
 }
 
+//function to remove history
+function deleteTransaction(Id){
+    Transactions = Transactions.filter( transaction => transaction.Id != Id);
+    init();
+}
+
 //function to display transaction in transaction history tab 
 function addtransactionUI(Transactions){
     //classify if expense or income 
@@ -58,40 +64,40 @@ function addtransactionUI(Transactions){
     item.innerHTML = `
         ${Transactions.Description}
         <span>${type}${Math.abs(Transactions.Amount)}</span>                      
-        <button class="delete-btn">X</button>
+        <button class="delete-btn" onclick="deleteTransaction(${Transactions.Id})">X</button>
     `;                                                                            //Math.abs() will change the sign of the value 
 
     list.appendChild(item);                                                       //append child is used to display created HTML
 };
-function generateID(){
-    return Math.floor(Math.random() * 10000000);                                  //math floor will alwasy round off and return highest integer
-}
+
 //function to generate ID
+function generateID(){
+    return Math.floor(Math.random() * 100000000);                                 //math floor will alwasy round off and return highest integer
+}
 
 //function to add new trasaction through form
 function addNewtransaction(e){
 
     e.preventDefault();
 
-    if (description.value.trim() === "" || amount.value.trim() === ""){
+    if (description.value.trim() === "" || amount.value.trim() === "" ){
       
         alert("Please enter valid Description and Amount");
     } 
     else {
         const Funddetails ={
               
-            Id : generateID(),
-            Description : description.value,
-            Amount : +amount.value
-        };
+            Id: generateID(),
+            Description: description.value,
+            Amount: +amount.value
+        }
         
         Transactions.push(Funddetails);
 
         addtransactionUI(Transactions);
         updateBEI();
 
-        description.value ="";
-        amount.value="";
+        
     };
 };
 
