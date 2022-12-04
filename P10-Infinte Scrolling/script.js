@@ -1,5 +1,5 @@
 const search = document.getElementById("filter");
-const post_container = document.getElementById('post-container');
+const post_container = document.getElementById("post-container");
 const loader = document.getElementById("loader");
 
 let limit=5;
@@ -34,16 +34,42 @@ showdata();
 //function to show loader 
 function showloader(){
     loader.classList.add("show");
-    setTimeout(() => {
+
+    setTimeout( () => {
         loader.classList.remove("show");
+
+        setTimeout( ()=> {
+            page++;
+            showdata();
+        } , 250)
+
     } , 1000);
 }
 
+//function to filter post 
+function filterposts(e){
+    const filterterm = e.target.value.toUpperCase();
+    const allposts = document.querySelectorAll(".post");                            //queryselector se hamne sare node get krliye of const me save krliya
+    allposts.forEach( post => {                                                     //forEach lagakr hamne sare div jinme pos-title or post-body ki class he wo save karle const me 
+        const title = post.querySelector(".post-title").innerText.toUpperCase();
+        const body = post.querySelector(".post-body").innerText.toUpperCase();
+
+        if (title.indexOf(filterterm) > -1 || body.indexOf(filterterm) > -1){        //indexOf dekhe ga ke filterterm me "title" he ya nhi or value bari ho -1 se to function apply kre  
+            post.style.display = "flex";
+        } else {
+            post.style.display = "none";
+        }
+    })
+    
+}
+
 //event handler 
-window.addEventListener( 'scroll' , () => {
-        
-    const { scrollTop , scrollHeight , clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight === scrollHeight) {
+//1- event handler for page scrolling 
+window.addEventListener('scroll' , () => {
+    const { scrollTop, scrollHeight, clientHeight }  =document.documentElement;
+    if (scrollTop + clientHeight === scrollHeight ){
         showloader();
     }
 })
+//2- filter posts
+search.addEventListener("input" , filterposts);
