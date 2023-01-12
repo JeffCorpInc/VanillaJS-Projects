@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Music Player</h1>
+
+    <div class="music-cnt" id="music-cnt">
+
+        <!--music info with progress bar-->
+        <div class="music-info">
+            <h4 id="title"> <!--add with js--> </h4>
+            <div class="progress-cnt" id="progress-cnt">
+                <div class="progress" id="progress"> <!--add with js--> </div>
+            </div>
+        </div>
+
+        
+        <!--audio and cover images-->
+        <audio src="/P11-Music Player/musics/Hans Zimmer - Time (Official Audio).mp3" id="audio"></audio>
+        <div class="image-cnt">
+            <img src="images/Time.jpg" alt="music-cover" id="cover">
+        </div>
+
+        <!-- navigation buttons -->
+        <div class="navigation">
+            <button class="action-btn" id="previous">
+                <i class="fa-solid fa-backward-fast"></i>
+            </button>
+            <button class="action-btn action-btn-big" id="play">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button class="action-btn" id="next">
+                <i class="fa-solid fa-forward-fast"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

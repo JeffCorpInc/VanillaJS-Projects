@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+    rgb(111, 207, 162),rgb(119, 192, 201),rgb(232, 236, 255));
+   font-family:'Lato', sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   margin: 0;
+}
+
+.music-cnt{
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0,0.2);
+    padding: 20px 20px;
+    position: relative;
+    display: flex;
+    margin: 100px;
+    z-index: 50;
+}
+
+.image-cnt{
+    position: relative;
+    width: 100px;
+}
+
+.image-cnt img{
+    height: 100px;
+    width: inherit;
+    border-radius:50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+.image-cnt::after{
+    content: " ";
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    bottom: 40px;
+    right: 40px;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn{
+    background-color: rgb(255, 255, 255);
+    color: rgb(99, 212, 159);
+    border: 0;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+.music-cnt.play .image-cnt img{
+    animation-play-state: running;
+}
+
+
+.action-btn.action-btn-big{
+    color: rgb(80, 80, 80);
+    font-size: 30px;
+}
+.action-btn::focus{
+    outline: 0;
+}
+
+.music-info{
+    background-color: rgba(255, 255, 255,0.35);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    left: 20px;
+    top: 0px ;    
+    padding: 10px 10px 10px 150px;
+    width: calc(100% - 40px);
+    transform: translateY(0%);
+    opacity: 0;
+    transition: transform 0.75s ease-in, opacity 0.75s ease-in;
+    z-index: 0;
+}
+
+.music-info h4{
+    margin: 0;
+}
+.music-cnt.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-cnt{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    width: 100%;
+    height: 5px;
+    margin: 12px 0px;
+    cursor: pointer;
+}
+
+.progress{
+    background-color:rgb(80, 80, 80) ;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
