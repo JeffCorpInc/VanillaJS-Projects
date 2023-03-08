@@ -1,6 +1,6 @@
 const search = document.getElementById("filter");
 const post_container = document.getElementById("post-container");
-const loader = document.getElementById("loader");
+const loader1 = document.getElementById("loader");
 
 let limit=5;
 let page=1;
@@ -33,10 +33,10 @@ showdata();
 
 //function to show loader 
 function showloader(){
-    loader.classList.add("show");
+    loader1.classList.add('show');
 
     setTimeout( () => {
-        loader.classList.remove("show");
+        loader1.classList.remove("show");
 
         setTimeout( ()=> {
             page++;
@@ -59,17 +59,17 @@ function filterposts(e){
         } else {
             post.style.display = "none";
         }
-    })
-    
+    })   
 }
 
 //event handler 
 //1- event handler for page scrolling 
-window.addEventListener('scroll' , () => {
-    const { scrollTop, scrollHeight, clientHeight }  =document.documentElement;
-    if (scrollTop + clientHeight === scrollHeight ){
-        showloader();
+window.addEventListener("scroll", () => {
+        const { scrollTop , scrollHeight , clientHeight } = document.documentElement;
+        if( scrollTop + clientHeight === scrollHeight - 75 ){
+            showloader();
+        }
     }
-})
+)
 //2- filter posts
 search.addEventListener("input" , filterposts);
