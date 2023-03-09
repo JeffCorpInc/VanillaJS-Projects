@@ -10,14 +10,14 @@
 </head>
 <body>
 
-    <button class="setting-btc" id="setting-btn">
+    <button class="setting-btn" id="setting-btn">
         <i class="fas fa-cog"></i>
     </button>
 
     <div class="settings" id="settings">
         <form id="setting-form">
             <div>
-                <label for="difficulty">Difficulty</label>
+                <label for="difficulty">Difficulty Level</label>
                 <select id="difficulty">
                     <option value="easy">easy</option>
                     <option value="medium">medium</option>
@@ -32,24 +32,19 @@
         <h2>Fast Typing Game</h2>
         <small>Type the word below:</small>
 
-        <h1 id="word">axiom</h1>
+        <h1 id="word">axiom</h1> <!--Word change using JS-->
 
         <input type="text" id="text" autocomplete="off" placeholder="Enter the word">
 
         <p class="time-cnt">
-            Ramaining Time: <span id="time">15s</span>
+            Time: <span id="time">15s</span>
         </p>
         <p class="score-cnt">
             Score: <span id="score">0</span>
         </p>
     </div>
 
-
-
-
-
-
-
+    <div class="endgame-cnt" id="endgame-cnt"></div>
 
     <script src="script.js"></script>
 </body>
