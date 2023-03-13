@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    
+</head>
+<body>
+    <!--card clear button-->
+    <button class="btn clear-btn" id="clear">
+        <i class="fas fa-trash"> Clear Cards </i>
+    </button>
+
+    <!--Card add button and heading-->
+    <h1>
+        Memory Cards
+        <button class="btn btn-small" id="add-card">
+            <i class="fas fa-plus"> Add Card</i>
+        </button>
+    </h1>
+
+    <!--Cards-->
+    <div class="card-container" id="card-container">
+        <!--Card 1-->
+        <div class="card active">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p>What is HTML</p>
+                </div>
+                <div class="card-back">
+                    <p>HTML stands for HypeText Markup Language used to create structure of a webpage.</p>
+                </div>
+            </div>
+        </div>
+        <!--Card 2-->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p>What is CSS</p>
+                </div>
+                <div class="card-back">
+                    <p>CSS stands for Cascading Style Sheet used for designing the appearance of a webpage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--navigation button-->
+    <div class="navigation">
+        <button class="nav-btn" id="prev-btn">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <div id="current-card"></div>
+
+        <button class="nav-btn" id="next-btn">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!--popup window to add new card-->
+    <div class="add-new-card-cnt" id="add-new-card-cnt">
+        <!--Heading & close button-->
+        <h1>Add New Card
+            <button class="btn btn-small btn-ghost" id="close-card">
+                <i class="fas fa-times"></i>
+            </button>
+        </h1>
+
+        <!--Question & answer for popup card-->
+        <div class="form-control">
+            <label for="question">Question</label>
+            <textarea id="question" placeholder="Enter Question Here"></textarea>
+        </div>
+        <div class="form-control">    
+            <label for="answer">Answer</label>
+            <textarea id="answer" placeholder="Enter Answer Here"></textarea>
+        </div>
+        <button class="btn" id="submit-card">
+            <i class="fas fa-plus"> Add Card</i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
