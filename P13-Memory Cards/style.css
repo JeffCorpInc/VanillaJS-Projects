@@ -64,11 +64,20 @@ h1 button{
     height: 100%;
     width: 100%;
     font-size: 1em;
+    transform: translateX(50%) rotateY(-10deg);
+    transition: transform 0.5s ease opacity 0.5s ease;
 }
 .card.active{
     opacity: 1;
     cursor: pointer;
     z-index: 10;
+    transform: translateX(0) rotateY(0deg);
+}
+.card.left{
+    transform: translateX(-50%) rotateY(10deg);
+}
+.card.show-ans .card-inner{
+    transform: rotateX(180deg);
 }
 
 .card-inner{
@@ -78,6 +87,8 @@ h1 button{
     width: 100%;
     border-radius: 10px;
     position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
 }
 
 .card-front, .card-back{
@@ -91,4 +102,94 @@ h1 button{
     width: 100%;
     background-color: #722d57;
     color: whitesmoke;
+    backface-visibility: hidden;
 }
+.card-front{
+    transform: rotateX(0deg);
+    z-index: 2;
+}
+.card-back{
+    transform: rotateX(180deg);
+}
+
+.card-front::after, .card-back::after{
+    content: "Click To Flip";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+.navigation{
+    display: flex;
+    margin: 20px;
+}
+
+.navigation .nav-btn{
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navigation p{
+    margin: 0 20px;
+}
+
+.add-new-card-cnt{
+    background-color: #722d57;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: -1;
+
+}
+
+.add-new-card-cnt.show{
+    opacity: 1;
+    z-index: 2;
+}
+.add-new-card-cnt h1{
+    margin: 10px 0;
+}
+
+.add-new-card-cnt label{
+    display: block;
+    margin: 20px 0 12px;
+}
+.add-new-card-cnt textarea{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    min-width: 500px;
+    max-width: 100%;
+    background-color: whitesmoke;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
