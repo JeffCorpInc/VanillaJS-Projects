@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Speech API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--Heading-->
+        <h1>Web Speech App</h1>
+
+        <!--Toggle button -->
+        <button class="btn toggle-btn" id="toggle-btn">
+            Toggle Custom Text
+        </button>
+
+        <!--toggle button window-->
+        <div class="custom-text" id="custom-text">
+
+            <!--Close Button-->
+            <div class="close-div" id="close-div">close</div>
+
+            <!--Input Box for voices-->
+            <h3>Change Voice</h3>
+            <label for="voices">Select Voices:</label>
+            <select id="voices">
+                            <!--Add by JS-->
+            </select>
+            
+
+            <!-- Text input field to get input from user-->
+            <textarea id="text-area" placeholder="Enter Text to Speech"></textarea>
+            <button class="btn" id="read-btn">Read Text</button>
+
+        </div>
+    </div>
+
+    <!-- we will add elements using JS -->
+    <main id="main"></main>
+
+    <script src="script.js"></script>    
+</body>
+
+</html>
