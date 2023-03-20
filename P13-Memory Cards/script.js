@@ -79,11 +79,22 @@ function updateCurrentCardTextArea(){
 
 //4 Getting card data from local storage 
 function  getCardData(){
-    const cardBackup = JSON.parse(localStorage.getItem(cardBackup));    //Json.Parse local storage se data lekr use Array me convert kardeta he 
-    return cardBackup === null ? [] : cardBackup;                       //hamne condition di agr cardBackup me data null he to empty array return karde warna cardBackup ka data return kare
+    
+    const cards = JSON.parse(localStorage.getItem(cards));    //Json.Parse local storage se data lekr use Array me convert kardeta he 
+    return cards === null ? [] : cards;                       //hamne condition di agr cardBackup me data null he to empty array return karde warna cardBackup ka data return kare
 }
 
 cardMakerFunc();
+
+
+
+
+
+
+
+
+
+
 
 
 //2 - Eventlistener for next card button
