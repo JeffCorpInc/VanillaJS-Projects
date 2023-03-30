@@ -5,13 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lyrics Finder</title>
 </head>
 <body>
-    
+    <!-- Header -->
+    <header>
+        <!-- heading -->
+        <h1>
+            Search Lyrics
+        </h1>
+        <!-- Search Box -->
+        <form id="form">
+            <input type="text" id="search" placeholder="Search by Song Title or Artist">
+            <button id="submit-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
 
+    </header>
 
+    <!-- Box for Results - Search items will be display here -->
+    <div class="container" id="results">
+        <p>Display Search Results Here:</p>
+    </div>
 
+    <!-- Navigation box for next and previous buttons -->
+    <div class="container centered" id="pagination"></div>
 
 
     <source src="script.js">

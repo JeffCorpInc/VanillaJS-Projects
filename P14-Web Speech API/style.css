@@ -95,7 +95,7 @@ main{
     margin: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: box-shadow 0.2s ease-out;   
+    transition: box-shadow 0.2s ease-out;
 }
 .box.btn:active{
     box-shadow: 0 0 10px 5px rgb(247, 86, 0);
