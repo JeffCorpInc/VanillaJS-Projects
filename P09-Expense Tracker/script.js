@@ -9,8 +9,8 @@ const description = document.getElementById("description");
 const amount = document.getElementById("amount");
 
 //Dummy Transactons
-
 const dummyTransactions = [];
+
 let Transactions = dummyTransactions;
 
 //function to update balance, income and expense box
@@ -18,19 +18,15 @@ function updateBEI(){
 
     //create array transaction amount from the trasaction array
     const Arrayamounts = Transactions.map( transaction => transaction.Amount);
-    console.log(Arrayamounts);
 
     //calculate total balance 
     const total = Arrayamounts.reduce((acc,amount) => (acc += amount), 0).toFixed(2);
-    console.log(total);
 
     //calculate income
     const income = Arrayamounts.filter(amount => amount > 0).reduce((acc,amount) => (acc += amount), 0).toFixed(2);
-    console.log(income);                                                           //ye Arrayamounts ko filter karaha he or sirf 0 se bari values ko show karaha he                                                              
 
     //calculate income
     const expense = Arrayamounts.filter(amount => amount < 0).reduce((acc,amount) => (acc += amount), 0).toFixed(2);
-    console.log(expense);
 
     //update BEI
     balance.innerText = `${total}`
@@ -40,26 +36,27 @@ function updateBEI(){
 
 //function to remove history
 function deleteTransaction(Id){
+
     Transactions = Transactions.filter( transaction => transaction.Id != Id);
     init();
 }
 
 //function to display transaction in transaction history tab 
-function addtransactionUI(Transactions){
+function addtransactionUI(transaction){
     //classify if expense or income 
-    const type = Transactions.Amount > 0 ? "+" : "-";                              //using turnery opreator we answer two conditons true and false (true:false) 
+    const type = transaction.Amount > 0 ? '+' : '-';                              //using turnery opreator we answer two conditons true and false (true:false) 
 
     //creating element
-    const item = document.createElement("li");
+    const item = document.createElement('li');
 
     //adding class
-    item.classList.add( Transactions.Amount > 0 ? "plus" : "minus");
+    item.classList.add( transaction.Amount > 0 ? 'plus' : 'minus');
 
     //adding HTML
     item.innerHTML = `
-        ${Transactions.Description}
-        <span>${type}${Math.abs(Transactions.Amount)}</span>                      
-        <button class="delete-btn" onclick="deleteTransaction(${Transactions.Id})">X</button>
+        ${transaction.description}
+        <span>${type}${Math.abs(transaction.Amount)}</span>                      
+        <button class="delete-btn" onclick="deleteTransaction(${transaction.Id})">X</button>
     `;                                                                            //Math.abs() will change the sign of the value 
 
     list.appendChild(item);                                                       //append child is used to display created HTML
@@ -67,6 +64,7 @@ function addtransactionUI(Transactions){
 
 //function to generate ID
 function generateID(){
+
     return Math.floor(Math.random() * 100000000);                                 //math floor will alwasy round off and return highest integer
 }
 
@@ -75,24 +73,25 @@ function addNewtransaction(e){
 
     e.preventDefault();
 
-    if (description.value.trim() === "" || amount.value.trim() === "" ){
+    if (description.value.trim() === '' || amount.value.trim() === '' ){
       
         alert("Please enter valid Description and Amount");
     } 
     else {
-        const Funddetails ={
+        const transaction ={
               
             Id: generateID(),
-            Description: description.value,
+            description: description.value,
             Amount: +amount.value
         }
         
-        Transactions.push(Funddetails);
+        Transactions.push(transaction);
 
-        addtransactionUI(Transactions);
+        addtransactionUI(transaction);
         updateBEI();
 
-        
+        description.value = '';
+        amount.value = '';
     };
 };
 
