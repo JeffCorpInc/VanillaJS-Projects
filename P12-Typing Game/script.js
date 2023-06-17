@@ -28,9 +28,9 @@ let time = 15;
 let score = 0;
 
 //4- Initialize difficulty
-let Dlevel = localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : easy;   //do conditions write ki ke agr storage me kuch nhi he to null local storage se write karde warna easy karde
+let Dlevel = localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : 'easy';   //do conditions write ki ke agr storage me kuch nhi he to null local storage se write karde warna easy karde
 
-difficulty.value = localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : easy;
+difficulty.value = localStorage.getItem("difficulty") !== null ? localStorage.getItem("difficulty") : 'easy';
 
 //on page load foucus on text area, it will foucus on the input area
 text.focus();
@@ -49,7 +49,7 @@ function addWordDOM(){
     randomWord = generateRandomWord();                                           //randomword me hamne generateRandomWord ka function add karwadiya or UI me update karwadiya 
     word.innerHTML = randomWord;                    
 }
-addWordDOM();
+
 
 //3-function to update score
 function updateScore(){                                                         //hamne score variable me increment karwadiya pehle uske bad dom ko update kardiya incremnet se or listener me call karwadiya
@@ -87,6 +87,8 @@ function updateTime(){
         gameOver();
     }
 }
+
+addWordDOM();
 
 //eventlistners
 //1- On text input area
