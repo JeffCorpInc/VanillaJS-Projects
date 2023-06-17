@@ -1,7 +1,7 @@
 //getting Element by ID
 const words = document.getElementById("word");
 const WrongWords = document.getElementById("wrong-letter");
-const popup = document.getElementById("popup-cont");
+const popup = document.getElementById("popup-container");
 const message = document.getElementById("win-lose");
 const restart = document.getElementById("reset");
 const slider = document.getElementById("sliding-cont");
@@ -19,10 +19,6 @@ const correctwords = [];       //"a","u","o","i","e","g",
 const wrongword = [];
 
 
-
-
-
-
 //function to display the the word on the screen
 function displayWord(){
     words.innerHTML = ` ${wordSelect.split("").map(                                                   //.map me span ke andr correctwrods arahe hn 
@@ -34,27 +30,33 @@ function displayWord(){
 
    const wordTextLetter = words.innerText.replace(/\n/g , " ");                                      //replace(jisko replace krna he , jis se karna he) //(/\n/) new line regex= regular expression
  
+   // If you win
    if (wordTextLetter === wordSelect){
+    
     message.innerText = 'You Win!';
-    popup.style.display='flex';
+    popup.style.display ='flex';
    }
 };
+
 displayWord();
 
 //function to display notification
 function shownotification(){
+
     slider.classList.add("show");
 
-    setTimeout( ()=> {slider.classList.remove("show");} , 1000);                                    //first value is function and second value is time 
+    setTimeout( ()=> {slider.classList.remove("show");} , 2000);                                    //first value is function and second value is time 
 }
 
 //function to update wrong letters
 function updatewrongletter(){
     
     //to show the wrong letters
-    WrongWords.innerHTML = `${wrongword.length > 0 ? `<p>Wrong Gusses</p>` : " "} ${wrongword.map
+    WrongWords.innerHTML = `${wrongword.length > 0 ? `<p>Wrong Gusses</p>` : ""} ${wrongword.map(
         
-        ( letter => `<span>${letter}</span>`)
+            letter => `<span>${letter}</span>`
+        
+        )
     }`;
 
     //to show the parts of hangman on every wrong word
@@ -74,7 +76,7 @@ function updatewrongletter(){
     //display popup if lose
     if (wrongword.length === hangmanParts.length) {
         message.innerText = 'You Lost!';
-        popup.style.display = "flex";
+        popup.style.display = 'flex';
     }
 }
 
@@ -88,7 +90,7 @@ function updatewrongletter(){
 //1- for keyboard
 window.addEventListener("keydown" , e => {                                                          //keydown will return alphabet ascii code
 
-        if (e.keyCode >= 65 && e.keyCode <= 90){
+        if (e.key >= 65 && e.key <= 90){
             
             const letter = e.key;                                                                   //.key will return orignal alphabat key
             if (wordSelect.includes(letter)) {                                                      //we'll check if wordselect me letter he ya nhi
