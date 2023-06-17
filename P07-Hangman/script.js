@@ -21,6 +21,7 @@ const wrongword = [];
 
 //function to display the the word on the screen
 function displayWord(){
+
     words.innerHTML = ` ${wordSelect.split("").map(                                                   //.map me span ke andr correctwrods arahe hn 
         
         letter => `<span class="letter">${correctwords.includes(letter) ? letter : " " }</span>`      //it return true or false and using turnery opreator we can give condition
@@ -28,7 +29,7 @@ function displayWord(){
        ).join('')                                                                                     //it will convert array into string again
     }`;
 
-   const wordTextLetter = words.innerText.replace(/\n/g , " ");                                      //replace(jisko replace krna he , jis se karna he) //(/\n/) new line regex= regular expression
+   const wordTextLetter = words.innerText.replace(/\n/g, "");                                      //replace(jisko replace krna he , jis se karna he) //(/\n/) new line regex= regular expression
  
    // If you win
    if (wordTextLetter === wordSelect){
@@ -90,7 +91,7 @@ function updatewrongletter(){
 //1- for keyboard
 window.addEventListener("keydown" , e => {                                                          //keydown will return alphabet ascii code
 
-        if (e.key >= 65 && e.key <= 90){
+        if (e.keyCode >= 65 && e.keyCode <= 90){
             
             const letter = e.key;                                                                   //.key will return orignal alphabat key
             if (wordSelect.includes(letter)) {                                                      //we'll check if wordselect me letter he ya nhi

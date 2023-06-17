@@ -10,12 +10,7 @@ const amount = document.getElementById("amount");
 
 //Dummy Transactons
 
-const dummyTransactions = [
-    { Id: 1 , Description: "Salary" , Amount: 125000 },
-    { Id: 2 , Description: "Bills" , Amount: -25000 },
-    { Id: 3 , Description: "Shopping" , Amount: -40000 },
-    { Id: 4 , Description: "profit" , Amount: 50000 }
-];
+const dummyTransactions = [];
 let Transactions = dummyTransactions;
 
 //function to update balance, income and expense box
