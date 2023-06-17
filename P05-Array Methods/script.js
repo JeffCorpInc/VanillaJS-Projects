@@ -9,7 +9,9 @@ const totalB = document.getElementById("cal-total");
 //Data Array to show names and net wealth
 let UserData =[];                                                                                //yaha pr hame fetch kiya wa data show karana he...fetched data ko extract krke 
 
-
+randomuser();
+randomuser();
+randomuser();
 
 //function to double the money
 function doubleWorth(){                                                                          //it will return the existing array in the form of another array
@@ -38,17 +40,18 @@ function sortMoney(){                                                           
 }
 
 //function to calculate the total worth of people
-function totalWorth(){                                                                           //Reducewill return singal value by reducing array
+function totalWorth() {                                                                           //Reducewill return singal value by reducing array
 
-    const totalNetWorth = UserData.reduce(
-
-        (acc,wor) => (acc += wor.Wealth) , 0
+    const totalNetWorth = UserData.reduce((acc,items) => 
+    
+        (acc += items.Wealth), 0
     );
     
     const addNetWorthElement = document.createElement("div");                                    //creating div 
-    addNetWorthElement.innerHTML = `<h3>Total Net Worth <strong>${(totalNetWorth)}</strong></h3>`//adding h3 element inside div element
+    addNetWorthElement.innerHTML = `<h3>Total Net Worth: <strong>${CurrFormat(totalNetWorth)}</strong></h3>`//adding h3 element inside div element
     mainDocs.appendChild(addNetWorthElement);                                                    //adding element inside the mainDocs element in HTML
-    
+        
+    setTimeout(() => addNetWorthElement.remove(), 4000);                                         //removing element after 3 seconds
 }
 
 //Function to Fetch data (randomuser.me/api)
@@ -59,14 +62,12 @@ async function randomuser(){                                                    
 
     const GetuserData = data.results[0];                                                         //awaiting data me se jo json me store tha waha se hamne or specific data nikala in the form of array
     const newdata = {                                                                            //uske bad hamne GetuserData me se names nikal kr storeUserData me as an object add krdya
+       
         Name:  `${GetuserData.name.first} ${GetuserData.name.last}`,
         Wealth: `${Math.round(Math.random()*1000000)}`
     };
     addData(newdata);
 }
-randomuser();
-randomuser();
-randomuser();
 
 //Function to push Data Into USERDATA constant
 function addData(newdata){                                                                        //we are adding data using push into our empty array from the fetched data
@@ -85,7 +86,7 @@ function updateData(showData = UserData){
         const element = document.createElement("div");                                             //we have created div 
         element.classList.add("name");                                                             //we have assigned div a class called name
         
-        element.innerHTML = `<strong>${items.Name}</strong> ${(items.Wealth)}`;                    //element ke andr html add krdi 
+        element.innerHTML = `<strong>${items.Name}</strong> ${CurrFormat(items.Wealth)}`;                    //element ke andr html add krdi 
         mainDocs.appendChild(element);                                                             //or html ko appendChild ke through mainDocs me switch krdiya
         
     });
@@ -93,10 +94,14 @@ function updateData(showData = UserData){
 
 // function to change the wealth format into real currency format
 function CurrFormat(num) {
-    return (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+
+    if (typeof num !== 'number') {
+
+      return num;                                                                                   // return the input as is if it's not a number
+    }
+
+    return 'PKR ' + (num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
-
-
 
 //Event Listeners
 
