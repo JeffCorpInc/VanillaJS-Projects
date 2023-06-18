@@ -57,7 +57,9 @@ function createCard(data,index) {                                        //hamne
             <p>${data.answer}</p>
         </div>
     </div>
-    `
+    `;
+
+
     //Eventisteners
     //1 -EventListneres to flip card
     cardStructure.addEventListener('click', () => {
@@ -80,19 +82,21 @@ function updateCurrentCardTextArea(){
 //4 Getting card data from local storage 
 function  getCardData(){
     
-    const cards = JSON.parse(localStorage.getItem(cards));    //Json.Parse local storage se data lekr use Array me convert kardeta he 
+    const cards = JSON.parse(localStorage.getItem('cards'));    //Json.Parse local storage se data lekr use Array me convert kardeta he 
     return cards === null ? [] : cards;                       //hamne condition di agr cardBackup me data null he to empty array return karde warna cardBackup ka data return kare
 }
 
+
+// 5. Function to save card data to local storage
+function saveCardData(cards) {
+    // Save card data to local storage
+    localStorage.setItem('cards', JSON.stringify(cards));
+    // Reload window
+    window.location.reload();
+}
+
+
 cardMakerFunc();
-
-
-
-
-
-
-
-
 
 
 
@@ -137,4 +141,41 @@ addCardBtn.addEventListener('click' , () => {
 //5 Eventlistener to close the addcardCnt window
 closeCard.addEventListener('click' , ()=>{
     addCardCnt.classList.remove('show');
+})
+
+
+// 6. Event Listener for creating a new card
+submitQA.addEventListener('click', () => {
+    // Get the user inputs from the text fields
+    const questionInput = question.value;
+    const answerInput = answer.value;
+    // Check to make sure inputs are not null
+    if ( questionInput.trim() && answerInput.trim() ) {
+        // Create a new object using the user inputs
+        const newCard = { question: questionInput, answer: answerInput }
+        // Using the newCard object, create a card element using the createCard function
+        createCard(newCard);
+        // Reset form fields
+        question.value = '';
+        answer.value = '';
+        // Hide form after submit
+        addCardCnt.classList.remove('show');
+        // Add the new card object to the cardsData array
+        cardData.push(newCard);
+        // Save data to local storage and reload page
+        saveCardData(cardData);
+    }
+})
+
+
+// 7. Event listener to clear all cards
+clearBtn.addEventListener('click', () => {
+    // Remove data from local storage
+    localStorage.clear();
+    // Clear the card container of all contents
+    cardCnt.innerHTML = '';
+    // Reload the window
+    window.location.reload;
+    // Update the current card number
+    currentCard.innerHTML = `<p></p>`
 })
